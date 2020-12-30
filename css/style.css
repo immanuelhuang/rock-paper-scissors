@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   background-color: #282a36;
   color: #f8f8f2;
+  font-family: monospace;
 }
 
 h2 {
@@ -18,9 +19,11 @@ h4 {
 
 #top {
   height: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+}
+
+#top h2 {
+  padding-top: 130px;
 }
 
 #middle {
@@ -40,43 +43,47 @@ h4 {
   display: block;
   position: absolute;
   top: 50%;
-  left: 50%;
   margin: -80px 0 0 -80px;
 }
 
+#player-div img {
+  left: 70%;
+}
+
 #computer-div img {
+  left: 30%;
   transform: scaleX(-1);
 }
 
-#player-div {
+.player-shake {
   animation-name: player-shake;
   animation-duration: 1s;
   animation-iteration-count: 1;
-  transform-origin: 0 50%;
+  transform-origin: 0% 50%;
 }
 
 @keyframes player-shake {
   10% {
-    transform: rotate(-30deg);
+    transform: rotate(-20deg);
   }
   30% {
-    transform: rotate(30deg);
+    transform: rotate(20deg);
   }
   50% {
-    transform: rotate(-30deg);
+    transform: rotate(-20deg);
   }
   70% {
-    transform: rotate(30deg);
+    transform: rotate(20deg);
   }
   90% {
-    transform: rotate(-30deg);
+    transform: rotate(-20deg);
   }
   100% {
     transform: rotate(0deg);
   }
 }
 
-#computer-div {
+.computer-shake {
   animation-name: computer-shake;
   animation-duration: 1s;
   animation-iteration-count: 1;
@@ -85,19 +92,19 @@ h4 {
 
 @keyframes computer-shake {
   10% {
-    transform: rotate(30deg);
+    transform: rotate(20deg);
   }
   30% {
-    transform: rotate(-30deg);
+    transform: rotate(-20deg);
   }
   50% {
-    transform: rotate(30deg);
+    transform: rotate(20deg);
   }
   70% {
-    transform: rotate(-30deg);
+    transform: rotate(-20deg);
   }
   90% {
-    transform: rotate(30deg);
+    transform: rotate(20deg);
   }
   100% {
     transform: rotate(0deg);
@@ -115,17 +122,22 @@ h4 {
   text-align: center;
 }
 
+#score-container {
+  min-height: 20px;
+}
+
 #bottom {
   height: 25%;
   text-align: center;
 }
 
 button {
-  color: #494949;
   margin: 20px 20px;
-  padding: 20px 30px;
-  border: 4px solid #44475a;
-  transition: all 0.4s ease 0s;
+  padding: 20px;
+  width: 10%;
+  border: 4px solid;
+  background-color: #f8f8f2;
+  transition: border 0.4s ease 0s, color 0.4s ease 0s, background-color 0.4s ease 0s;
   cursor: pointer;
   outline: none;
   font-weight: 700;
@@ -133,25 +145,36 @@ button {
   line-height: 20px;
 }
 
-button:hover {
-  color: #ffffff;
-  transition: all 0.4s ease 0s;
-}
-
-button img {
-  height: 30px;
-}
-#rock-button:hover {
-  background-color: #ff5555;
+#rock-button, #rock-button:disabled {
+  color: #ff5555;
   border-color: #ff5555;
 }
 
-#paper-button:hover {
-  background-color: #50fa7b;
-  border-color: #50fa7b;
+#rock-button:hover:enabled, .rock-clicked {
+  background-color: #ff5555;
+  color: #ffffff !important;
+  transition: all 0.4s ease 0s;
 }
 
-#scissor-button:hover {
-  background-color: #8be9fd;
-  border-color: #8be9fd;
+#paper-button, #paper-button:disabled {
+  color: #bd93f9;
+  border-color: #bd93f9;
 }
+
+#paper-button:hover:enabled, .paper-clicked {
+  background-color: #bd93f9;
+  color: #ffffff !important;
+  transition: all 0.4s ease 0s;
+}
+
+#scissor-button, #scissor-button:disabled {
+  color: #ffb87c;
+  border-color: #ffb86c;
+}
+
+#scissor-button:hover:enabled, .scissor-clicked {
+  background-color: #ffb86c;
+  color: #ffffff !important;
+  transition: all 0.4s ease 0s;
+}
+

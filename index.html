@@ -8,12 +8,11 @@
 </head>
 <body>
   <div id="top">
-    <h2>Welcome to rock, paper, scissors.</h2>
+    <h2>Can you beat the computer?</h2>
   </div>
-
   <div id="middle">
     <div id="player-div">
-      <img src="img/rock.png" alt="">
+      <img src="img/rock.png">
     </div>
     <div id="score-div">
       <div>
@@ -22,18 +21,19 @@
       <div>
         <h3>0 : 0</h3>
       </div>
-      <div>
-        <h4>Blank beats Blank. You lose!</h4>
+      <div id="score-container">
+        <h4 id="score-message"> </h4>
       </div>
     </div>
     <div id="computer-div">
-      <img src="img/rock.png" alt="">
+      <img src="img/rock.png">
     </div>
   </div>
   <div id="bottom">
-    <button id="rock-button">rock</button>
-    <button id="paper-button">paper</button>
-    <button id="scissor-button">scissor</button>
+    <button value="rock" id="rock-button">rock</button>
+    <button value="paper" id="paper-button">paper</button>
+    <button value="scissor" id="scissor-button">scissor</button>
   </div>
+  <script src="js/script.js"></script>
 </body>
 </html>
