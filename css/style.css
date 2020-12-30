@@ -1,0 +1,157 @@
+html, body {
+  height: 100%;
+  background-color: #282a36;
+  color: #f8f8f2;
+}
+
+h2 {
+  font-size: 60px;
+}
+
+h3 {
+  font-size: 100px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+#top {
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#middle {
+  display: flex;
+  height: 50%;
+  justify-content: space-around;
+  align-items: stretch;
+  color: #44475a;
+}
+
+#player-div, #computer-div{
+  flex: 1 1 35%;
+  position: relative;
+}
+
+#player-div img, #computer-div img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -80px 0 0 -80px;
+}
+
+#computer-div img {
+  transform: scaleX(-1);
+}
+
+#player-div {
+  animation-name: player-shake;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  transform-origin: 0 50%;
+}
+
+@keyframes player-shake {
+  10% {
+    transform: rotate(-30deg);
+  }
+  30% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  70% {
+    transform: rotate(30deg);
+  }
+  90% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#computer-div {
+  animation-name: computer-shake;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  transform-origin: 100% 50%;
+}
+
+@keyframes computer-shake {
+  10% {
+    transform: rotate(30deg);
+  }
+  30% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  70% {
+    transform: rotate(-30deg);
+  }
+  90% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#score-div {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#score-div div {
+  text-align: center;
+}
+
+#bottom {
+  height: 25%;
+  text-align: center;
+}
+
+button {
+  color: #494949;
+  margin: 20px 20px;
+  padding: 20px 30px;
+  border: 4px solid #44475a;
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+button:hover {
+  color: #ffffff;
+  transition: all 0.4s ease 0s;
+}
+
+button img {
+  height: 30px;
+}
+#rock-button:hover {
+  background-color: #ff5555;
+  border-color: #ff5555;
+}
+
+#paper-button:hover {
+  background-color: #50fa7b;
+  border-color: #50fa7b;
+}
+
+#scissor-button:hover {
+  background-color: #8be9fd;
+  border-color: #8be9fd;
+}

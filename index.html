@@ -3,37 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <script>
-    function computerPlay() {
-      switch (choice = Math.floor(Math.random() * 3)) {
-        case 0:
-          return "rock";
-        case 1:
-          return "paper";
-        case 2:
-          return "scissor";
-      }
-    }
+  <div id="top">
+    <h2>Welcome to rock, paper, scissors.</h2>
+  </div>
 
-    function playRound(playerSelection, computerSelection) {
-      playerSelection = playerSelection.toLowerCase();
-      if (playerSelection === computerSelection) return `You played ${playerSelection} and the computer played ${computerSelection}. It's a tie.`;
-      else if ((playerSelection == "rock" && computerSelection == "scissor")
-        || (playerSelection == "paper" && computerSelection == "rock")
-        || (playerSelection == "scissor" && computerSelection == "paper")) return `You played ${playerSelection} and the computer played ${computerSelection}. You win.`;
-      else return `You played ${playerSelection} and the computer played ${computerSelection}. You lose.`
-    }
-
-    function game() {
-      for (let i = 0; i < 5; i++) {
-        console.log(playRound(prompt("Rock, paper, or scissors?"), computerPlay()));
-      }
-    }
-
-    game();
-
-  </script>
+  <div id="middle">
+    <div id="player-div">
+      <img src="img/rock.png" alt="">
+    </div>
+    <div id="score-div">
+      <div>
+        <h2>Score</h2>
+      </div>
+      <div>
+        <h3>0 : 0</h3>
+      </div>
+      <div>
+        <h4>Blank beats Blank. You lose!</h4>
+      </div>
+    </div>
+    <div id="computer-div">
+      <img src="img/rock.png" alt="">
+    </div>
+  </div>
+  <div id="bottom">
+    <button id="rock-button">rock</button>
+    <button id="paper-button">paper</button>
+    <button id="scissor-button">scissor</button>
+  </div>
 </body>
 </html>
